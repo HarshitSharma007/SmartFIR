@@ -11,21 +11,21 @@ function isNumeric(n) {
 }
 
 export default function FIR() {
-  const [firId, setFirId] = useState<string>();
-  const [nameC, setNameC] = useState<string>();
-  const [nameA, setNameA] = useState<string>();
-  const [detName, setdetName] = useState<string>();
-  const [parent, setParent] = useState<string>();
-  const [addressLocality, setAddressLocality] = useState<string>();
-  const [addressDistrict, setAddressDistrict] = useState<string>();
-  const [addressState, setAddressState] = useState<string>();
-  const [addressPin, setAddressPin] = useState<string>();
-  const [contact, setContact] = useState<string>();
-  const [rel, setRel] = useState<string>();
-  const [desc, setDesc] = useState<string>();
-  const [ipc, setIpc] = useState<string>("");
-  const [email, setEmail] = useState<string>();
-  const [content, setContent] = useState<string>();
+  const [firId, setFirId] = useState();
+  const [nameC, setNameC] = useState();
+  const [nameA, setNameA] = useState();
+  const [detName, setdetName] = useState();
+  const [parent, setParent] = useState();
+  const [addressLocality, setAddressLocality] = useState();
+  const [addressDistrict, setAddressDistrict] = useState();
+  const [addressState, setAddressState] = useState();
+  const [addressPin, setAddressPin] = useState();
+  const [contact, setContact] = useState();
+  const [rel, setRel] = useState();
+  const [desc, setDesc] = useState();
+  const [ipc, setIpc] = useState("");
+  const [email, setEmail] = useState();
+  const [content, setContent] = useState();
   const [otpShow, setOtpShow] = useState(false);
   const [otpVerified, setOtpVerified] = useState(false);
   const [otp, setOtp] = useState('');
@@ -34,7 +34,7 @@ export default function FIR() {
   
   const client = new NFTStorage({ token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkaWQ6ZXRocjoweDRmODVDQTY3NzkzNjYxYWM2MDFDNjZkMDdjNDc0REFDZGY2ZUE3RTgiLCJpc3MiOiJuZnQtc3RvcmFnZSIsImlhdCI6MTY4MTM4MzIwMDg2OCwibmFtZSI6IkhhcnNoaXQifQ.AZLbputyfky-kZWrRRsQjQCGosIKOWAblEhSrOJN14o",  });
 
-  const handleSubmit = async (e: any) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const obj = {
       firId,
@@ -96,7 +96,7 @@ export default function FIR() {
     router.push("/firCards");
   };
 
-  const GenerateIPCs = async (e: any) => {
+  const GenerateIPCs = async (e) => {
     fetch(`https://api-sk9o.onrender.com/title/${desc}` )
     .then((response) => response.json())
     .then((data) => {

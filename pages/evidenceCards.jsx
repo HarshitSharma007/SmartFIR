@@ -13,17 +13,11 @@ import { Contract, providers, utils } from "ethers";
 import Layout from "../components/Layout";
 import useEvidenceStore from "../stores/evidenceStore";
 
-interface Evidence {
-  case_no: number;
-  case_desc: string;
-}
-
-interface Evidences_Props extends Array<Evidence> {}
 
 export default function EvidenceCards() {
   const evidenceData = useEvidenceStore((state) => state.evidenceArr);
   const setEvidenceArr = useEvidenceStore((state) => state.setEvidence);
-  const [filtered, setFiltered] = useState<any[]>([]);
+  const [filtered, setFiltered] = useState([]);
 
   useEffect(() => {
     //Runs on the first render

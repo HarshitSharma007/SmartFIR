@@ -2,17 +2,16 @@ import CaseStorage from "../abi/CaseStorage.json";
 import { useState } from "react";
 import { Web3Storage } from "web3.storage";
 import { Contract, providers, utils } from "ethers";
-import { AnyNsRecord } from "dns";
 import Layout from "../components/Layout";
 import axios from 'axios';
 
 export default function Evidence() {
   
-  const [caseid, setCaseid] = useState<string>();
+  const [caseid, setCaseid] = useState();
   const [files, setFiles] = useState([]);
   const [fileName,setFileName]=useState("");
   const [file,setFile]=useState("");
-  const [desc, setDesc] = useState<string>();
+  const [desc, setDesc] = useState();
   const retrieveFile = (e) => {
     const data = e.target.files[0]; //files array of files object
     // console.log(data);
